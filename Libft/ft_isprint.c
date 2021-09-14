@@ -6,13 +6,13 @@
 /*   By: sojeon <sojeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 18:26:31 by sojeon            #+#    #+#             */
-/*   Updated: 2021/05/06 18:28:02 by sojeon           ###   ########.fr       */
+/*   Updated: 2021/09/14 03:47:59 by sojeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

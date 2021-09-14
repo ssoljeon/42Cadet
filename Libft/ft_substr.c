@@ -6,7 +6,7 @@
 /*   By: sojeon <sojeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 19:30:23 by sojeon            #+#    #+#             */
-/*   Updated: 2021/05/18 21:39:00 by sojeon           ###   ########.fr       */
+/*   Updated: 2021/09/14 04:14:43 by sojeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_minlen(unsigned int x, unsigned int y)
 	}
 }
 
-char		*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	slen;
 	unsigned int	minlen;
@@ -37,7 +37,8 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= slen || len == 0)
 		return (ft_strdup(""));
 	minlen = ft_minlen(slen - start, len);
-	if (!(ret = (char*)malloc(minlen * sizeof(char) + 1)))
+	ret = (char *)malloc(minlen * sizeof(char) + 1);
+	if (!ret)
 		return (0);
 	i = 0;
 	while (i < minlen)

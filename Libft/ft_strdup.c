@@ -6,7 +6,7 @@
 /*   By: sojeon <sojeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 17:00:17 by sojeon            #+#    #+#             */
-/*   Updated: 2021/05/18 21:33:40 by sojeon           ###   ########.fr       */
+/*   Updated: 2021/09/14 04:07:43 by sojeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_strdup(const char *s1)
 	{
 		++len;
 	}
-	if (!(ret = (char*)malloc(len * sizeof(char) + 1)))
+	ret = (char *)malloc(len * sizeof(char) + 1);
+	if (!ret)
 		return (0);
 	while (++i <= len - 1)
 	{

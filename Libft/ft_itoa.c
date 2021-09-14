@@ -6,7 +6,7 @@
 /*   By: sojeon <sojeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 09:54:34 by sojeon            #+#    #+#             */
-/*   Updated: 2021/06/12 11:26:46 by sojeon           ###   ########.fr       */
+/*   Updated: 2021/09/14 03:49:05 by sojeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ char	*ft_itoa(int n)
 	char	*ret;
 
 	len = ft_len(n);
-	if (!(ret = (char *)malloc(len * sizeof(char) + 1)))
+	ret = (char *)malloc(len * sizeof(char) + 1);
+	if (!ret)
 		return (0);
 	ret[len] = '\0';
 	tmp = n;

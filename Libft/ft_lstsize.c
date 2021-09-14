@@ -6,13 +6,13 @@
 /*   By: sojeon <sojeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 23:16:07 by sojeon            #+#    #+#             */
-/*   Updated: 2021/06/12 23:25:17 by sojeon           ###   ########.fr       */
+/*   Updated: 2021/09/14 04:03:21 by sojeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int		ret;
 

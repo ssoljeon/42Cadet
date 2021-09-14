@@ -6,7 +6,7 @@
 /*   By: sojeon <sojeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 12:34:15 by sojeon            #+#    #+#             */
-/*   Updated: 2021/06/12 21:41:42 by sojeon           ###   ########.fr       */
+/*   Updated: 2021/09/14 16:48:43 by sojeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static size_t	ft_getlen(char const *s, char c)
 	return (ret);
 }
 
-static int		ft_free(char **s)
+static int	ft_free(char **s)
 {
 	int		idx;
 
@@ -64,25 +64,19 @@ static int		ft_free(char **s)
 	return (0);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split2(char **ret, char const *s, char c, int row)
 {
-	char	**ret;
-	int		row;
-	int		len;
 	int		idx;
+	int		len;
 
-	if (!s)
-		return (0);
-	row = ft_getrow(s, c);
-	if (!(ret = (char **)malloc(sizeof(char *) * (row + 1))))
-		return (NULL);
 	idx = 0;
 	while (idx < row)
 	{
 		while (*s == c)
 			++s;
 		len = ft_getlen(s, c);
-		if (!(ret[idx] = (char *)malloc(len * sizeof(char) + 1)))
+		ret[idx] = (char *)malloc(len * sizeof(char) + 1);
+		if (!ret[idx])
 			ft_free(ret);
 		ft_strlcpy(ret[idx], s, len + 1);
 		++idx;
@@ -90,5 +84,22 @@ char			**ft_split(char const *s, char c)
 			s += len;
 	}
 	ret[idx] = (NULL);
+	return (ret);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**ret;
+	int		row;
+	int		idx;
+
+	if (!s)
+		return (0);
+	row = ft_getrow(s, c);
+	ret = (char **)malloc(sizeof(char *) * (row + 1));
+	if (!ret)
+		return (NULL);
+	idx = 0;
+	ft_split2(ret, s, c, row);
 	return (ret);
 }

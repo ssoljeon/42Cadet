@@ -6,7 +6,7 @@
 /*   By: sojeon <sojeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 11:32:33 by sojeon            #+#    #+#             */
-/*   Updated: 2021/06/12 19:36:44 by sojeon           ###   ########.fr       */
+/*   Updated: 2021/09/14 04:09:33 by sojeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s || !f)
 		return (0);
 	len = ft_strlen(s);
-	if (!(ret = (char *)malloc(len * sizeof(char) + 1)))
+	ret = (char *)malloc(len * sizeof(char) + 1);
+	if (!ret)
 		return (0);
 	idx = 0;
 	while (s[idx] != '\0')

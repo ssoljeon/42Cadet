@@ -6,13 +6,13 @@
 /*   By: sojeon <sojeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 18:36:25 by sojeon            #+#    #+#             */
-/*   Updated: 2021/05/06 18:38:30 by sojeon           ###   ########.fr       */
+/*   Updated: 2021/09/14 04:15:16 by sojeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{

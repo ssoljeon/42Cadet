@@ -6,7 +6,7 @@
 /*   By: sojeon <sojeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 22:54:14 by sojeon            #+#    #+#             */
-/*   Updated: 2021/06/12 09:48:21 by sojeon           ###   ########.fr       */
+/*   Updated: 2021/09/14 04:13:39 by sojeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	if (start > end)
 		return (ft_strdup(""));
-	if (!(ret = (char *)malloc((end - start + 1) * sizeof(char) + 1)))
+	ret = (char *)malloc((end - start + 1) * sizeof(char) + 1);
+	if (!ret)
 		return (0);
 	ft_strlcpy(ret, s1 + start, end - start + 2);
 	return (ret);

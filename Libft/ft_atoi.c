@@ -6,13 +6,13 @@
 /*   By: sojeon <sojeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 18:46:34 by sojeon            #+#    #+#             */
-/*   Updated: 2021/05/10 19:54:48 by sojeon           ###   ########.fr       */
+/*   Updated: 2021/09/14 03:30:41 by sojeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int					minus;
 	unsigned long long	nbr;
